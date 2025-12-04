@@ -7,6 +7,7 @@ import { kisels, Kisel } from "@/data/kisels";
 import KiselSlider from "@/components/KiselSlider";
 import KiselCard from "@/components/KiselCard";
 import Cart from "@/components/Cart";
+import ThemeToggle from "@/components/ThemeToggle";
 
 interface CartItem extends Kisel {
   quantity: number;
@@ -67,6 +68,7 @@ export default function Index() {
 
   return (
     <div className="min-h-screen">
+      <ThemeToggle />
       <Cart items={cartItems} onUpdateQuantity={updateQuantity} onRemove={removeFromCart} />
       
       <section className="relative overflow-hidden bg-gradient-to-b from-background to-secondary/30 pt-32 pb-20">

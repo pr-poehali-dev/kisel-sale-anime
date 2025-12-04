@@ -76,7 +76,7 @@ export const kisels: Kisel[] = [
     price: 260,
     description: "Безумно любит тебя! Насыщенный вишневый вкус, от которого невозможно оторваться.",
     color: "#C62828",
-    image: "https://cdn.poehali.dev/projects/63cd2f03-ec83-4499-864f-78c4ae3ab133/files/a6a057a6-7815-45cc-b5f3-b2cd8f0f4fb0.jpg"
+    image: "https://cdn.poehali.dev/projects/63cd2f03-ec83-4499-864f-78c4ae3ab133/files/cb029ddd-be58-4a76-8d17-9a47b4a2431f.jpg"
   },
   {
     id: 6,
@@ -102,7 +102,7 @@ export const kisels: Kisel[] = [
     price: 320,
     description: "Элегантная и изысканная, как аристократка. Деликатный вкус белой смородины для истинных гурманов.",
     color: "#F8BBD0",
-    image: "https://cdn.poehali.dev/projects/63cd2f03-ec83-4499-864f-78c4ae3ab133/files/3dc7bae4-e0ff-45ac-b0a7-c4dc52b029ed.jpg"
+    image: "https://cdn.poehali.dev/projects/63cd2f03-ec83-4499-864f-78c4ae3ab133/files/af3958ac-aeff-4dc5-a663-e623caa989cf.jpg"
   },
   {
     id: 8,
@@ -115,6 +115,6 @@ export const kisels: Kisel[] = [
     price: 310,
     description: "Королевская и требовательная! Роскошный ежевичный вкус с пряными нотками.",
     color: "#4A148C",
-    image: "https://cdn.poehali.dev/projects/63cd2f03-ec83-4499-864f-78c4ae3ab133/files/5034fc31-d0c6-4ab8-8f34-3f2309f31960.jpg"
+    image: "https://cdn.poehali.dev/projects/63cd2f03-ec83-4499-864f-78c4ae3ab133/files/7e6d5646-bb3e-468d-9447-6e1420361d0e.jpg"
   }
 ];
