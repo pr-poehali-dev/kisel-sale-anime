@@ -12,17 +12,14 @@ interface KiselCardProps {
 export default function KiselCard({ kisel, onAddToCart }: KiselCardProps) {
   return (
     <Card className="group overflow-hidden border-2 hover:border-primary transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
-      <div 
-        className="h-48 relative overflow-hidden"
-        style={{ background: `linear-gradient(135deg, ${kisel.color}40, ${kisel.color}80)` }}
-      >
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="text-6xl group-hover:scale-110 transition-transform duration-300">
-            ✨
-          </div>
-        </div>
+      <div className="h-64 relative overflow-hidden bg-gradient-to-br from-purple-50 to-pink-50">
+        <img 
+          src={kisel.image} 
+          alt={kisel.name}
+          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+        />
         <Badge 
-          className="absolute top-3 right-3 text-xs font-bold"
+          className="absolute top-3 right-3 text-xs font-bold shadow-lg"
           style={{ backgroundColor: kisel.color, color: '#fff' }}
         >
           {kisel.dereType}

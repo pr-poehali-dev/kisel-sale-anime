@@ -51,10 +51,14 @@ export default function Cart({ items, onUpdateQuantity, onRemove }: CartProps) {
                   style={{ borderColor: `${item.color}40` }}
                 >
                   <div 
-                    className="w-20 h-20 rounded-lg flex items-center justify-center text-3xl flex-shrink-0"
-                    style={{ background: `linear-gradient(135deg, ${item.color}40, ${item.color}80)` }}
+                    className="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0"
+                    style={{ border: `2px solid ${item.color}` }}
                   >
-                    ✨
+                    <img 
+                      src={item.image} 
+                      alt={item.name}
+                      className="w-full h-full object-cover"
+                    />
                   </div>
                   
                   <div className="flex-1 space-y-2">

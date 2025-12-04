@@ -76,12 +76,17 @@ export default function KiselSlider({ kisels, onAddToCart }: KiselSliderProps) {
             </div>
           </div>
           
-          <div className="relative h-64 md:h-80 flex items-center justify-center">
-            <div 
-              className="text-9xl animate-scale-in"
-              style={{ filter: 'drop-shadow(0 10px 30px rgba(0,0,0,0.2))' }}
-            >
-              ✨
+          <div className="relative h-64 md:h-96 flex items-center justify-center">
+            <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl animate-scale-in">
+              <img 
+                src={currentKisel.image} 
+                alt={currentKisel.name}
+                className="w-full h-full object-cover"
+                style={{ 
+                  filter: 'drop-shadow(0 10px 30px rgba(0,0,0,0.3))',
+                  border: `4px solid ${currentKisel.color}`
+                }}
+              />
             </div>
           </div>
         </div>
