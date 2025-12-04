@@ -21,45 +21,41 @@ export default function KiselSlider({ kisels, onAddToCart }: KiselSliderProps) {
   };
 
   return (
-    <div className="relative w-full max-w-4xl mx-auto py-12">
+    <div className="relative w-full max-w-5xl mx-auto py-12">
       <div 
-        className="rounded-3xl p-8 md:p-12 transition-all duration-500 animate-fade-in"
-        style={{ 
-          background: `linear-gradient(135deg, ${currentKisel.color}20, ${currentKisel.color}40)`,
-          border: `3px solid ${currentKisel.color}80`
-        }}
+        className="liquid-glass rounded-[2.5rem] p-8 md:p-14 smooth-transition animate-fade-in border-0 shadow-2xl"
       >
-        <div className="grid md:grid-cols-2 gap-8 items-center">
-          <div className="space-y-6">
+        <div className="grid md:grid-cols-2 gap-10 items-center">
+          <div className="space-y-7">
             <div>
               <div 
-                className="inline-block px-4 py-2 rounded-full text-white font-bold mb-4"
+                className="inline-block px-5 py-2 rounded-full text-white font-medium mb-5 shadow-lg"
                 style={{ backgroundColor: currentKisel.color }}
               >
-                {currentKisel.dereType} 💕
+                {currentKisel.dereType}
               </div>
-              <h2 className="text-4xl md:text-5xl font-bold mb-2">
+              <h2 className="text-5xl md:text-6xl font-semibold mb-3 tracking-tight">
                 {currentKisel.name}
               </h2>
-              <p className="text-xl text-muted-foreground">{currentKisel.flavor}</p>
+              <p className="text-2xl text-muted-foreground font-light">{currentKisel.flavor}</p>
             </div>
             
-            <p className="text-lg">{currentKisel.description}</p>
+            <p className="text-lg font-light leading-relaxed">{currentKisel.description}</p>
             
             <div className="flex flex-wrap gap-3">
-              <div className="flex items-center gap-2 bg-background/80 px-4 py-2 rounded-full">
+              <div className="flex items-center gap-2 bg-secondary/50 px-5 py-3 rounded-full backdrop-blur-sm">
                 <Icon name="Flame" size={18} />
-                <span className="font-semibold">{currentKisel.calories} ккал</span>
+                <span className="font-medium">{currentKisel.calories} ккал</span>
               </div>
-              <div className="flex items-center gap-2 bg-background/80 px-4 py-2 rounded-full">
+              <div className="flex items-center gap-2 bg-secondary/50 px-5 py-3 rounded-full backdrop-blur-sm">
                 <Icon name="Cherry" size={18} />
-                <span className="font-semibold">{currentKisel.berryType}</span>
+                <span className="font-medium">{currentKisel.berryType}</span>
               </div>
             </div>
             
-            <div className="flex items-center gap-4 pt-4">
+            <div className="flex items-center gap-5 pt-4">
               <span 
-                className="text-4xl font-bold"
+                className="text-5xl font-semibold tracking-tight"
                 style={{ color: currentKisel.color }}
               >
                 {currentKisel.price}₽
@@ -67,25 +63,21 @@ export default function KiselSlider({ kisels, onAddToCart }: KiselSliderProps) {
               <Button 
                 size="lg"
                 onClick={() => onAddToCart(currentKisel)}
-                className="hover-scale text-lg px-8"
+                className="smooth-transition hover:scale-105 text-lg px-8 py-6 rounded-full shadow-lg"
                 style={{ backgroundColor: currentKisel.color }}
               >
                 <Icon name="ShoppingCart" size={20} className="mr-2" />
-                Добавить в корзину
+                Добавить
               </Button>
             </div>
           </div>
           
-          <div className="relative h-64 md:h-96 flex items-center justify-center">
-            <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl animate-scale-in">
+          <div className="relative h-80 md:h-[28rem] flex items-center justify-center">
+            <div className="relative w-full h-full rounded-3xl overflow-hidden shadow-2xl animate-scale-in">
               <img 
                 src={currentKisel.image} 
                 alt={currentKisel.name}
-                className="w-full h-full object-cover"
-                style={{ 
-                  filter: 'drop-shadow(0 10px 30px rgba(0,0,0,0.3))',
-                  border: `4px solid ${currentKisel.color}`
-                }}
+                className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
               />
             </div>
           </div>
@@ -97,7 +89,7 @@ export default function KiselSlider({ kisels, onAddToCart }: KiselSliderProps) {
           size="icon"
           variant="outline"
           onClick={prevSlide}
-          className="rounded-full w-12 h-12 shadow-lg hover-scale bg-background"
+          className="rounded-full w-14 h-14 shadow-2xl smooth-transition hover:scale-110 liquid-glass border-0"
         >
           <Icon name="ChevronLeft" size={24} />
         </Button>
@@ -108,22 +100,22 @@ export default function KiselSlider({ kisels, onAddToCart }: KiselSliderProps) {
           size="icon"
           variant="outline"
           onClick={nextSlide}
-          className="rounded-full w-12 h-12 shadow-lg hover-scale bg-background"
+          className="rounded-full w-14 h-14 shadow-2xl smooth-transition hover:scale-110 liquid-glass border-0"
         >
           <Icon name="ChevronRight" size={24} />
         </Button>
       </div>
       
-      <div className="flex justify-center gap-2 mt-6">
+      <div className="flex justify-center gap-2 mt-8">
         {kisels.map((_, index) => (
           <button
             key={index}
             onClick={() => setCurrentIndex(index)}
-            className={`w-3 h-3 rounded-full transition-all duration-300 ${
-              index === currentIndex ? 'w-8' : 'opacity-50'
+            className={`h-2 rounded-full smooth-transition ${
+              index === currentIndex ? 'w-12 opacity-100' : 'w-2 opacity-30'
             }`}
             style={{ 
-              backgroundColor: index === currentIndex ? currentKisel.color : '#ccc'
+              backgroundColor: index === currentIndex ? currentKisel.color : '#888'
             }}
           />
         ))}

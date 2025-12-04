@@ -69,21 +69,21 @@ export default function Index() {
     <div className="min-h-screen">
       <Cart items={cartItems} onUpdateQuantity={updateQuantity} onRemove={removeFromCart} />
       
-      <section className="relative overflow-hidden bg-gradient-to-br from-pink-100 via-purple-100 to-blue-100 pt-20 pb-12">
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-10 left-10 text-6xl animate-pulse">✨</div>
-          <div className="absolute top-32 right-20 text-4xl animate-pulse delay-100">💕</div>
-          <div className="absolute bottom-20 left-1/4 text-5xl animate-pulse delay-200">🌸</div>
-          <div className="absolute top-1/3 right-1/3 text-4xl animate-pulse delay-300">⭐</div>
+      <section className="relative overflow-hidden bg-gradient-to-b from-background to-secondary/30 pt-32 pb-20">
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-10 left-10 text-6xl">✨</div>
+          <div className="absolute top-32 right-20 text-4xl">💕</div>
+          <div className="absolute bottom-20 left-1/4 text-5xl">🌸</div>
+          <div className="absolute top-1/3 right-1/3 text-4xl">⭐</div>
         </div>
         
         <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center mb-8 animate-fade-in">
-            <h1 className="text-5xl md:text-7xl font-extrabold mb-4 bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 text-transparent bg-clip-text">
-              Аниме Кисели ✨
+          <div className="text-center mb-16 animate-fade-in">
+            <h1 className="text-6xl md:text-8xl font-semibold mb-6 tracking-tight">
+              Аниме Кисели
             </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto">
-              Каждый кисель — это уникальная аниме-девочка со своим характером! 💕
+            <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto font-light">
+              Каждый кисель — это уникальная аниме-девочка со своим характером
             </p>
           </div>
           
@@ -91,34 +91,34 @@ export default function Index() {
         </div>
       </section>
       
-      <section className="py-16 bg-gradient-to-b from-background to-purple-50/30">
+      <section className="py-24 bg-background">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold mb-4">Полный каталог 🎀</h2>
-            <p className="text-lg text-muted-foreground">
-              Выбери свою идеальную вайфу-кисель!
+          <div className="text-center mb-16">
+            <h2 className="text-5xl font-semibold mb-4 tracking-tight">Полный каталог</h2>
+            <p className="text-lg text-muted-foreground font-light">
+              Выбери свою идеальную вайфу-кисель
             </p>
           </div>
           
-          <div className="max-w-5xl mx-auto mb-8 space-y-4">
-            <div className="relative">
-              <Icon name="Search" className="absolute left-4 top-1/2 -translate-y-1/2 text-muted-foreground" size={20} />
+          <div className="max-w-5xl mx-auto mb-12 space-y-6">
+            <div className="relative liquid-glass rounded-2xl p-1">
+              <Icon name="Search" className="absolute left-6 top-1/2 -translate-y-1/2 text-muted-foreground" size={20} />
               <Input
                 placeholder="Поиск по имени, вкусу или типажу..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="pl-12 h-14 text-lg"
+                className="pl-14 h-16 text-lg bg-transparent border-0 focus-visible:ring-0 font-light"
               />
             </div>
             
-            <div className="grid sm:grid-cols-2 gap-4">
-              <div>
-                <label className="text-sm font-semibold mb-2 block">Вкус</label>
+            <div className="grid sm:grid-cols-2 gap-6">
+              <div className="liquid-glass rounded-2xl p-6">
+                <label className="text-sm font-medium mb-3 block">Вкус</label>
                 <Select value={flavorFilter} onValueChange={setFlavorFilter}>
-                  <SelectTrigger className="h-12">
+                  <SelectTrigger className="h-12 bg-transparent border-0 focus:ring-0">
                     <SelectValue />
                   </SelectTrigger>
-                  <SelectContent>
+                  <SelectContent className="glass rounded-xl">
                     <SelectItem value="all">Все вкусы</SelectItem>
                     {uniqueFlavors.map(flavor => (
                       <SelectItem key={flavor} value={flavor}>{flavor}</SelectItem>
@@ -127,13 +127,13 @@ export default function Index() {
                 </Select>
               </div>
               
-              <div>
-                <label className="text-sm font-semibold mb-2 block">Калорийность</label>
+              <div className="liquid-glass rounded-2xl p-6">
+                <label className="text-sm font-medium mb-3 block">Калорийность</label>
                 <Select value={calorieFilter} onValueChange={setCalorieFilter}>
-                  <SelectTrigger className="h-12">
+                  <SelectTrigger className="h-12 bg-transparent border-0 focus:ring-0">
                     <SelectValue />
                   </SelectTrigger>
-                  <SelectContent>
+                  <SelectContent className="glass rounded-xl">
                     <SelectItem value="all">Любая</SelectItem>
                     <SelectItem value="low">Низкая (&lt;100 ккал)</SelectItem>
                     <SelectItem value="medium">Средняя (100-120 ккал)</SelectItem>
@@ -161,41 +161,41 @@ export default function Index() {
         </div>
       </section>
       
-      <section className="py-16 bg-gradient-to-br from-purple-100 to-pink-100">
+      <section className="py-24 bg-secondary/30">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-4xl font-bold text-center mb-12">О наших киселях 📖</h2>
+            <h2 className="text-5xl font-semibold text-center mb-16 tracking-tight">О наших киселях</h2>
             
             <div className="grid md:grid-cols-2 gap-6">
-              <div className="bg-white/80 backdrop-blur p-6 rounded-2xl border-2 border-purple-200 animate-fade-in">
+              <div className="liquid-glass p-8 rounded-3xl smooth-transition hover:scale-[1.02] animate-fade-in">
                 <div className="text-4xl mb-4">🍓</div>
-                <h3 className="text-xl font-bold mb-3">Натуральные ингредиенты</h3>
-                <p className="text-muted-foreground">
-                  Только настоящие ягоды и фрукты, никаких искусственных добавок!
+                <h3 className="text-xl font-semibold mb-3">Натуральные ингредиенты</h3>
+                <p className="text-muted-foreground font-light">
+                  Только настоящие ягоды и фрукты, никаких искусственных добавок
                 </p>
               </div>
               
-              <div className="bg-white/80 backdrop-blur p-6 rounded-2xl border-2 border-pink-200 animate-fade-in delay-100">
+              <div className="liquid-glass p-8 rounded-3xl smooth-transition hover:scale-[1.02] animate-fade-in">
                 <div className="text-4xl mb-4">💕</div>
-                <h3 className="text-xl font-bold mb-3">Типажи персонажей</h3>
-                <p className="text-muted-foreground">
+                <h3 className="text-xl font-semibold mb-3">Типажи персонажей</h3>
+                <p className="text-muted-foreground font-light">
                   Каждый кисель вдохновлён классическими аниме-архетипами
                 </p>
               </div>
               
-              <div className="bg-white/80 backdrop-blur p-6 rounded-2xl border-2 border-blue-200 animate-fade-in delay-200">
+              <div className="liquid-glass p-8 rounded-3xl smooth-transition hover:scale-[1.02] animate-fade-in">
                 <div className="text-4xl mb-4">⚡</div>
-                <h3 className="text-xl font-bold mb-3">Разная калорийность</h3>
-                <p className="text-muted-foreground">
+                <h3 className="text-xl font-semibold mb-3">Разная калорийность</h3>
+                <p className="text-muted-foreground font-light">
                   От диетических (90 ккал) до питательных (140 ккал) вариантов
                 </p>
               </div>
               
-              <div className="bg-white/80 backdrop-blur p-6 rounded-2xl border-2 border-purple-200 animate-fade-in delay-300">
+              <div className="liquid-glass p-8 rounded-3xl smooth-transition hover:scale-[1.02] animate-fade-in">
                 <div className="text-4xl mb-4">🎨</div>
-                <h3 className="text-xl font-bold mb-3">Яркие вкусы</h3>
-                <p className="text-muted-foreground">
-                  От нежной клубники до насыщенной ежевики — выбор для каждого!
+                <h3 className="text-xl font-semibold mb-3">Яркие вкусы</h3>
+                <p className="text-muted-foreground font-light">
+                  От нежной клубники до насыщенной ежевики — выбор для каждого
                 </p>
               </div>
             </div>
@@ -203,12 +203,12 @@ export default function Index() {
         </div>
       </section>
       
-      <footer className="bg-gradient-to-r from-purple-600 to-pink-600 text-white py-12">
+      <footer className="bg-foreground text-background py-20">
         <div className="container mx-auto px-4 text-center">
-          <div className="text-5xl mb-4">✨💕🌸</div>
-          <h3 className="text-2xl font-bold mb-2">Аниме Кисели</h3>
-          <p className="mb-6 text-purple-100">
-            Свяжитесь с нами для оформления заказа!
+          <div className="text-5xl mb-6 opacity-50">✨💕🌸</div>
+          <h3 className="text-3xl font-semibold mb-3 tracking-tight">Аниме Кисели</h3>
+          <p className="mb-8 opacity-70 font-light">
+            Свяжитесь с нами для оформления заказа
           </p>
           <div className="flex justify-center gap-4 flex-wrap">
             <Button variant="outline" size="lg" className="bg-white text-purple-600 hover:bg-purple-50">
